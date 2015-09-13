@@ -8,7 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		BEF05D251BA48E6600B69E8A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF05D241BA48E6600B69E8A /* main.swift */; };
+		BEF05D431BA52C2A00B69E8A /* eutils.h in Headers */ = {isa = PBXBuildFile; fileRef = BEF05D421BA52C2A00B69E8A /* eutils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEF05D4A1BA52C2A00B69E8A /* eutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF05D401BA52C2A00B69E8A /* eutils.framework */; settings = {ASSET_TAGS = (); }; };
+		BEF05D4F1BA52C2A00B69E8A /* eutilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF05D4E1BA52C2A00B69E8A /* eutilsTests.swift */; };
+		BEF05D571BA52C7B00B69E8A /* efetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF05D2B1BA48FC000B69E8A /* efetch.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEF05D4B1BA52C2A00B69E8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEF05D191BA48E6600B69E8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF05D3F1BA52C2A00B69E8A;
+			remoteInfo = eutils;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BEF05D1F1BA48E6600B69E8A /* CopyFiles */ = {
@@ -25,6 +39,13 @@
 /* Begin PBXFileReference section */
 		BEF05D211BA48E6600B69E8A /* efetch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = efetch; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF05D241BA48E6600B69E8A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BEF05D2B1BA48FC000B69E8A /* efetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = efetch.swift; sourceTree = "<group>"; };
+		BEF05D401BA52C2A00B69E8A /* eutils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = eutils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF05D421BA52C2A00B69E8A /* eutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eutils.h; sourceTree = "<group>"; };
+		BEF05D441BA52C2A00B69E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEF05D491BA52C2A00B69E8A /* eutilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eutilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF05D4E1BA52C2A00B69E8A /* eutilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eutilsTests.swift; sourceTree = "<group>"; };
+		BEF05D501BA52C2A00B69E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +56,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BEF05D3C1BA52C2A00B69E8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEF05D461BA52C2A00B69E8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF05D4A1BA52C2A00B69E8A /* eutils.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -42,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				BEF05D231BA48E6600B69E8A /* efetch */,
+				BEF05D411BA52C2A00B69E8A /* eutils */,
+				BEF05D4D1BA52C2A00B69E8A /* eutilsTests */,
 				BEF05D221BA48E6600B69E8A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				BEF05D211BA48E6600B69E8A /* efetch */,
+				BEF05D401BA52C2A00B69E8A /* eutils.framework */,
+				BEF05D491BA52C2A00B69E8A /* eutilsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,7 +102,37 @@
 			path = efetch;
 			sourceTree = "<group>";
 		};
+		BEF05D411BA52C2A00B69E8A /* eutils */ = {
+			isa = PBXGroup;
+			children = (
+				BEF05D2B1BA48FC000B69E8A /* efetch.swift */,
+				BEF05D421BA52C2A00B69E8A /* eutils.h */,
+				BEF05D441BA52C2A00B69E8A /* Info.plist */,
+			);
+			path = eutils;
+			sourceTree = "<group>";
+		};
+		BEF05D4D1BA52C2A00B69E8A /* eutilsTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEF05D4E1BA52C2A00B69E8A /* eutilsTests.swift */,
+				BEF05D501BA52C2A00B69E8A /* Info.plist */,
+			);
+			path = eutilsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BEF05D3D1BA52C2A00B69E8A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF05D431BA52C2A00B69E8A /* eutils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		BEF05D201BA48E6600B69E8A /* efetch */ = {
@@ -82,6 +152,42 @@
 			productReference = BEF05D211BA48E6600B69E8A /* efetch */;
 			productType = "com.apple.product-type.tool";
 		};
+		BEF05D3F1BA52C2A00B69E8A /* eutils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEF05D511BA52C2A00B69E8A /* Build configuration list for PBXNativeTarget "eutils" */;
+			buildPhases = (
+				BEF05D3B1BA52C2A00B69E8A /* Sources */,
+				BEF05D3C1BA52C2A00B69E8A /* Frameworks */,
+				BEF05D3D1BA52C2A00B69E8A /* Headers */,
+				BEF05D3E1BA52C2A00B69E8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eutils;
+			productName = eutils;
+			productReference = BEF05D401BA52C2A00B69E8A /* eutils.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BEF05D481BA52C2A00B69E8A /* eutilsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEF05D541BA52C2A00B69E8A /* Build configuration list for PBXNativeTarget "eutilsTests" */;
+			buildPhases = (
+				BEF05D451BA52C2A00B69E8A /* Sources */,
+				BEF05D461BA52C2A00B69E8A /* Frameworks */,
+				BEF05D471BA52C2A00B69E8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEF05D4C1BA52C2A00B69E8A /* PBXTargetDependency */,
+			);
+			name = eutilsTests;
+			productName = eutilsTests;
+			productReference = BEF05D491BA52C2A00B69E8A /* eutilsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +198,12 @@
 				ORGANIZATIONNAME = "Kenneth Durbrow";
 				TargetAttributes = {
 					BEF05D201BA48E6600B69E8A = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					BEF05D3F1BA52C2A00B69E8A = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					BEF05D481BA52C2A00B69E8A = {
 						CreatedOnToolsVersion = 7.0;
 					};
 				};
@@ -109,9 +221,28 @@
 			projectRoot = "";
 			targets = (
 				BEF05D201BA48E6600B69E8A /* efetch */,
+				BEF05D3F1BA52C2A00B69E8A /* eutils */,
+				BEF05D481BA52C2A00B69E8A /* eutilsTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEF05D3E1BA52C2A00B69E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEF05D471BA52C2A00B69E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BEF05D1D1BA48E6600B69E8A /* Sources */ = {
@@ -122,7 +253,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BEF05D3B1BA52C2A00B69E8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF05D571BA52C7B00B69E8A /* efetch.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEF05D451BA52C2A00B69E8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF05D4F1BA52C2A00B69E8A /* eutilsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEF05D4C1BA52C2A00B69E8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEF05D3F1BA52C2A00B69E8A /* eutils */;
+			targetProxy = BEF05D4B1BA52C2A00B69E8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BEF05D261BA48E6600B69E8A /* Debug */ = {
@@ -217,6 +372,70 @@
 			};
 			name = Release;
 		};
+		BEF05D521BA52C2A00B69E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = eutils/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.me.kmdurbrow.eutils;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BEF05D531BA52C2A00B69E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = eutils/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.me.kmdurbrow.eutils;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BEF05D551BA52C2A00B69E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = eutilsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.me.kmdurbrow.eutilsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BEF05D561BA52C2A00B69E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = eutilsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.me.kmdurbrow.eutilsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -234,6 +453,22 @@
 			buildConfigurations = (
 				BEF05D291BA48E6600B69E8A /* Debug */,
 				BEF05D2A1BA48E6600B69E8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BEF05D511BA52C2A00B69E8A /* Build configuration list for PBXNativeTarget "eutils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEF05D521BA52C2A00B69E8A /* Debug */,
+				BEF05D531BA52C2A00B69E8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BEF05D541BA52C2A00B69E8A /* Build configuration list for PBXNativeTarget "eutilsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEF05D551BA52C2A00B69E8A /* Debug */,
+				BEF05D561BA52C2A00B69E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

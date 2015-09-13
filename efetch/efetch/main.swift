@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import eutils
 
-print("Hello, World!")
-
+for arg in Process.arguments[1..<Process.arguments.endIndex] {
+    try! EUtils.FASTA(arg) {
+        print($0)
+        return false
+    }
+}
