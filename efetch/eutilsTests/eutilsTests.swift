@@ -21,7 +21,7 @@ class eutilsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testFASTA() {
         var seqlen = 0
         try! EUtils.FASTA("CM000670.1") { (line) in
             if line.hasPrefix(">") {
@@ -33,6 +33,23 @@ class eutilsTests: XCTestCase {
             return false
         }
         XCTAssert(seqlen == 146364022)
+    }
+    
+    func testSummary() {
+        do {
+            let summary = try! EUtils.summary("CM000670.1")
+            let seqId = summary["extra"] as! String
+            let title = summary["title"] as! String
+            let slen = summary["slen"] as! Int
+            print(">\(seqId) \(title) Length:\(slen)")
+        }
+        do {
+            let summary = try! EUtils.summary("NC_000008")
+            let seqId = summary["extra"] as! String
+            let title = summary["title"] as! String
+            let slen = summary["slen"] as! Int
+            print(">\(seqId) \(title) Length:\(slen)")
+        }
     }
     
     func testPerformanceExample() {

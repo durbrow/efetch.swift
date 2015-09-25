@@ -12,7 +12,8 @@ public struct EUtils {
     private struct URL : CustomStringConvertible {
         let url: NSURL
         
-        init(function: String, params: [String:String]) {
+        init(function: String, params: [String:String])
+        {
             let comp = NSURLComponents()
             
             comp.scheme = "http"
@@ -25,7 +26,11 @@ public struct EUtils {
         
         var description: String { get { return url.description } }
     }
-    private static func searchURL(term: String, database: String) -> URL {
+}
+
+public extension EUtils {
+    private static func searchURL(term: String, database: String) -> URL
+    {
         return URL(
             function: "esearch",
             params  : [
@@ -35,7 +40,51 @@ public struct EUtils {
             ]
         )
     }
-    private static func fetchURL(gi: String, database: String) -> URL {
+    private static func search(term: String, database: String) -> [String]
+    {
+        let url = searchURL(term, database: database).url
+        guard
+            let data = try? NSData(contentsOfURL: url, options: []),
+            let json = try? NSJSONSerialization.JSONObjectWithData(data, options: []),
+            let resp = json as? [String:AnyObject],
+            let rslt = resp["esearchresult"] as? [String:AnyObject],
+            let gilist = rslt["idlist"] as? [String]
+            else { return [] }
+        return gilist
+    }
+}
+
+public extension EUtils {
+    private static func summaryURL(gi: String, database: String) -> URL
+    {
+        return URL(
+            function: "esummary",
+            params  : [
+                "db"        : database,
+                "retmode"   : "json",
+                "id"        : gi,
+            ]
+        )
+    }
+    public static func summary(accession: String) throws -> [String:AnyObject]
+    {
+        let gilist = search(accession, database: "nuccore")
+        guard gilist.count > 0 else { return [:] }
+        let url = summaryURL(gilist[0], database: "nuccore").url
+        guard
+            let data = try? NSData(contentsOfURL: url, options: []),
+            let json = try? NSJSONSerialization.JSONObjectWithData(data, options: []),
+            let resp = json as? [String:AnyObject],
+            let rslt = resp["result"] as? [String:AnyObject],
+            let byId = rslt[gilist[0]] as? [String:AnyObject]
+            else { return [:] }
+        return byId
+    }
+}
+
+public extension EUtils {
+    private static func fetchURL(gi: String, database: String) -> URL
+    {
         return URL(
             function: "efetch",
             params  : [
@@ -46,21 +95,9 @@ public struct EUtils {
             ]
         )
     }
-    private static func search(term: String, database: String) throws -> [String] {
-        let url = EUtils.searchURL(term, database: database).url
-        for ;; {
-            let data = try NSData(contentsOfURL: url, options: NSDataReadingOptions())
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
-            guard let resp = json as? [String:AnyObject] else { break }
-            guard let rslt = resp["esearchresult"] as? [String:AnyObject] else { break }
-            guard let gilist = rslt["idlist"] as? [AnyObject] else { break }
-            return gilist.map { $0 as! String }
-        }
-        return []
-    }
     public static func FASTA(accession: String, f: (String) -> Bool) throws
     {
-        let gilist = try EUtils.search(accession, database: "nuccore")
+        let gilist = search(accession, database: "nuccore")
         guard gilist.count > 0 else { return }
         let url = fetchURL(gilist[0], database: "nuccore").url
         try String(contentsOfURL: url, encoding: NSUTF8StringEncoding).enumerateLines { (line, inout stop: Bool) in
@@ -68,5 +105,3 @@ public struct EUtils {
         }
     }
 }
-
-
