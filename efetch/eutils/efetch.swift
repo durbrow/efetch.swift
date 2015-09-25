@@ -28,8 +28,8 @@ public struct EUtils {
     }
 }
 
-public extension EUtils {
-    private static func searchURL(term: String, database: String) -> URL
+private extension EUtils {
+    static func searchURL(term: String, database: String) -> URL
     {
         return URL(
             function: "esearch",
@@ -40,7 +40,33 @@ public extension EUtils {
             ]
         )
     }
-    private static func search(term: String, database: String) -> [String]
+    static func summaryURL(gi: String, database: String) -> URL
+    {
+        return URL(
+            function: "esummary",
+            params  : [
+                "db"        : database,
+                "retmode"   : "json",
+                "id"        : gi,
+            ]
+        )
+    }
+    static func fetchURL(gi: String, database: String) -> URL
+    {
+        return URL(
+            function: "efetch",
+            params  : [
+                "db"        : database,
+                "retmode"   : "text",
+                "rettype"   : "fasta",
+                "id"        : gi,
+            ]
+        )
+    }
+}
+
+private extension EUtils {
+    static func search(term: String, database: String) -> [String]
     {
         let url = searchURL(term, database: database).url
         guard
@@ -55,18 +81,7 @@ public extension EUtils {
 }
 
 public extension EUtils {
-    private static func summaryURL(gi: String, database: String) -> URL
-    {
-        return URL(
-            function: "esummary",
-            params  : [
-                "db"        : database,
-                "retmode"   : "json",
-                "id"        : gi,
-            ]
-        )
-    }
-    public static func summary(accession: String) throws -> [String:AnyObject]
+    static func summary(accession: String) throws -> [String:AnyObject]
     {
         let gilist = search(accession, database: "nuccore")
         guard gilist.count > 0 else { return [:] }
@@ -83,19 +98,7 @@ public extension EUtils {
 }
 
 public extension EUtils {
-    private static func fetchURL(gi: String, database: String) -> URL
-    {
-        return URL(
-            function: "efetch",
-            params  : [
-                "db"        : database,
-                "retmode"   : "text",
-                "rettype"   : "fasta",
-                "id"        : gi,
-            ]
-        )
-    }
-    public static func FASTA(accession: String, f: (String) -> Bool) throws
+    static func FASTA(accession: String, f: (String) -> Bool) throws
     {
         let gilist = search(accession, database: "nuccore")
         guard gilist.count > 0 else { return }
