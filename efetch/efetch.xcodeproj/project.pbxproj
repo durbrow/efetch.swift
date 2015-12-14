@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEE4A7971BE03AFA00A004EE /* efetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF05D2B1BA48FC000B69E8A /* efetch.swift */; };
 		BEF05D251BA48E6600B69E8A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF05D241BA48E6600B69E8A /* main.swift */; };
 		BEF05D431BA52C2A00B69E8A /* eutils.h in Headers */ = {isa = PBXBuildFile; fileRef = BEF05D421BA52C2A00B69E8A /* eutils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BEF05D4A1BA52C2A00B69E8A /* eutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF05D401BA52C2A00B69E8A /* eutils.framework */; settings = {ASSET_TAGS = (); }; };
+		BEF05D4A1BA52C2A00B69E8A /* eutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF05D401BA52C2A00B69E8A /* eutils.framework */; };
 		BEF05D4F1BA52C2A00B69E8A /* eutilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF05D4E1BA52C2A00B69E8A /* eutilsTests.swift */; };
-		BEF05D571BA52C7B00B69E8A /* efetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF05D2B1BA48FC000B69E8A /* efetch.swift */; settings = {ASSET_TAGS = (); }; };
+		BEF05D571BA52C7B00B69E8A /* efetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF05D2B1BA48FC000B69E8A /* efetch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE4A7971BE03AFA00A004EE /* efetch.swift in Sources */,
 				BEF05D251BA48E6600B69E8A /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -369,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -387,7 +391,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.me.kmdurbrow.eutils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -408,7 +411,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.me.kmdurbrow.eutils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -455,6 +457,7 @@
 				BEF05D2A1BA48E6600B69E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEF05D511BA52C2A00B69E8A /* Build configuration list for PBXNativeTarget "eutils" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +466,7 @@
 				BEF05D531BA52C2A00B69E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEF05D541BA52C2A00B69E8A /* Build configuration list for PBXNativeTarget "eutilsTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +475,7 @@
 				BEF05D561BA52C2A00B69E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
