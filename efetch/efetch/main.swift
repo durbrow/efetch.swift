@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import eutils
 
 for arg in Process.arguments[1..<Process.arguments.endIndex] {
     try! EUtils.FASTA(arg) {
