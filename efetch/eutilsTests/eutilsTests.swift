@@ -20,6 +20,12 @@ class eutilsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+   
+    func testSRARunList() {
+        for run in EUtils.SRARunList("SRS107532" /*"SRP003186"*/) {
+            print(run.accession)
+        }
+    }
     
     func testFASTA() {
         var seqlen = 0
@@ -37,14 +43,14 @@ class eutilsTests: XCTestCase {
     
     func testSummary() {
         do {
-            let summary = try! EUtils.summary("CM000670.1")
+            let summary = EUtils.summary("nuccore", accession: "CM000670.1")
             let seqId = summary["extra"] as! String
             let title = summary["title"] as! String
             let slen = summary["slen"] as! Int
             print(">\(seqId) \(title) Length:\(slen)")
         }
         do {
-            let summary = try! EUtils.summary("NC_000008")
+            let summary = EUtils.summary("nuccore", accession: "NC_000008")
             let seqId = summary["extra"] as! String
             let title = summary["title"] as! String
             let slen = summary["slen"] as! Int
